@@ -1,0 +1,73 @@
+<!doctype html>
+<html ng-app="EmployeeModule">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="./js/Controller.js"></script>
+     <link rel="stylesheet" href="./css/default.css">
+  </head>
+<body>
+
+<body ng-controller="EmployeeAppCtrl">
+<div ng-include ="'Header.html'"></div>
+
+    <hr>
+    <section id="intro">
+    	<h2>A basic demo</h2>
+        <label>Name:</label>
+      	<input type="text" ng-model="yourName" placeholder="Enter a name here">
+      
+      	<h5>Angular Demo - hello-   {{yourName}}!</h5>
+    </section>
+    
+    
+ <br>
+    
+    <div id="content">
+    <section>
+    	<table>
+    	<tr>
+    	<th>Name</th>
+    	<th>ID</th>
+    	<th>Age</th>
+    	</tr>
+    	<tr ng-repeat="student in students">
+    		<td>{{student.name}}</td>
+    		<td>{{student.id}}</td>	
+    		<td>{{student.age}}</td>
+    	</tr>
+    	</table>
+    	</section>
+    	</div>
+ 
+  <aside>
+        <ul>
+    	<li ng-repeat="student in students">
+    	<b>{{student.name}}</b>
+    	<b>{{student.id}}</b>
+    	<b>{{student.age}}</b>
+    		
+    	</li>
+    
+    </ul>
+    </aside>
+
+   <div id="mainContent">
+        <section>
+           <p> blog post</p>
+        </section>
+        <section id="comments">
+           <p>comments</p>
+        </section>
+        <form>
+           <p>teting</p>
+        </form>
+    </div>
+
+    <aside>
+       <b>testing</b>
+    </aside>
+    
+    
+ <div ng-include ="'Footer.html'"></div>
+  </body>
+</html>
