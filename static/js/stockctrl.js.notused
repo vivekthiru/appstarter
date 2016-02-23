@@ -1,0 +1,12 @@
+//var stockApp = angular.module('StockModule', []);
+
+frameworkApp.controller('StockController', function ($scope,$http) {
+	
+	 var url = "/SpringLearn/starter";
+	alert(url);
+	 $http.get(url).success( function(response) {
+         //alert(response.id);
+ 		 $scope.students = response;
+});
+});
+

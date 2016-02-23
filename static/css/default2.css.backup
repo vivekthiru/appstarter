@@ -1,0 +1,158 @@
+{
+    margin: 0 0 20px;
+}
+
+/* Tell the browser to render HTML 5 elements as block */
+header, footer, aside, nav, article {
+    display: block;
+}
+
+
+
+#wrapper {
+	min-height:100%;
+	position:relative;
+}
+
+
+html,
+body {
+	margin:2px;
+	padding:0;
+	height:100%;
+	font: 13px/22px verdana, sans-serif;
+	background: #f0f0f0;
+}
+
+
+h2 {
+    font-size: 28px;
+    line-height: 44px;
+    padding: 22px 0;
+}
+ 
+h3 {
+    font-size: 18px;
+    line-height: 22px;
+    padding: 11px 0;
+}
+ 
+p {
+    padding-bottom: 22px;
+}
+
+footer{
+	 position: absolute;
+     left: 0;
+     width: 100%;
+	 background: rgb(55,35,35);
+	 float: left;
+	 list-style: none;
+	 display: block;
+	 height: 20px;
+}
+
+
+nav {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background: rgb(55,35,35);
+}
+
+nav ul {
+    margin: 0 auto;
+    width: 940px;
+    list-style: none;
+    
+}
+
+nav ul li {
+    float: left;
+}
+
+nav ul li a {
+     display: block;
+     margin-right: 20px;
+     width: 140px;
+     font-size: 14px;
+     line-height: 44px;
+     text-align: center;
+     text-decoration: none;
+     color: #777;
+ }
+    
+ nav ul li a:hover {
+      color: #fff;
+  }
+ 
+ 
+nav ul li.selected a {
+          color: #fff;
+      }
+      
+#intro {
+    margin-top: 66px;
+    padding: 44px;
+    background: #467612 url("intro_background.png") repeat-x;
+    background-size: 100%;
+    border-radius: 22px;
+}      
+
+
+#page1 {
+    margin-top: 66px;
+    padding: 44px;
+    background-size: 100%;
+    border-radius: 22px;
+}      
+
+
+#intro h2, #intro p¬†{
+    width: 336px;
+}
+ 
+#intro h2 {
+    padding: 0 0 22px 0;
+    font-weight: normal
+    color: #fff;
+}
+ 
+#intro p {
+    padding: 0;
+    color: #d9f499;
+}
+
+#content {
+    display: table;
+}
+ 
+#mainContent {
+    display: table-cell;
+    width: 620px;
+    padding-right: 22px;
+}
+ 
+aside {
+    display: table-cell;
+    width: 300px;
+}
+
+
+#content table {
+	border-collapse: collapse;
+	width: 940px;
+}
+
+ #content table, #content th, #content td {
+    width: 940px;
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
