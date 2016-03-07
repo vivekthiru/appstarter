@@ -154,3 +154,54 @@ th {
 }
 
 /*table*/
+
+/*Spinner*/
+
+#processing {  
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:1000;
+    background-color:grey;
+    opacity: .6;
+}
+
+.ajax-loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    display: block;     
+}
+
+/*Spinner*/
+/*animate*/
+
+.animate { 
+   -webkit-transition: 600ms cubic-bezier(0.785, 0.135, 0.150, 0.860) all;
+    -moz-transition: 600ms cubic-bezier(0.785, 0.135, 0.150, 0.860) all;
+    -ms-transition: 600ms cubic-bezier(0.785, 0.135, 0.150, 0.860) all;
+    -o-transition: 600ms cubic-bezier(0.785, 0.135, 0.150, 0.860) all;
+    transition: 600ms cubic-bezier(0.785, 0.135, 0.150, 0.860) all;
+    overflow: hidden;
+    text-overflow: clip;
+    white-space:nowrap;
+    position: relative;
+} 
+
+.animate.ng-leave.ng-leave-active,
+.animate.ng-enter {
+  
+    opacity: 0;
+    height: 0px;
+}        
+
+.animate.ng-enter.ng-enter-active,
+.animate.ng-leave {
+
+    opacity: 1;
+    height: 30px;
+}
+
+/*animate*/

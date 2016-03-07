@@ -1,12 +1,33 @@
-//var stockApp = angular.module('StockModule', []);
 
-frameworkApp.controller('StockController', function ($scope,$http) {
-	
+var frameworkApp = angular.module('FrameworkModule', ['ngAnimate']);
+
+frameworkApp.controller('StockController', function ($parse,$scope,$http) {
+	alert('hello');
 	 var url = "/SpringLearn/starter";
-	alert(url);
+	 $scope.model = {};
+	 
+	//alert(url);
 	 $http.get(url).success( function(response) {
-         //alert(response.id);
- 		 $scope.students = response;
+		 $scope.contents = response.content;
+		 $scope.headers = response.header;
+	 });
+	 
+	 $scope.addRow= function(){
+		var addcontent='{';
+			angular.forEach($scope.headers,function(header){
+			addcontent = addcontent+"'"+header.variablename +"':"+'model.'+header.variablename+",";
+		});
+		addcontent = addcontent.slice(0, -1) +"}";
+		var expr =$parse(addcontent); 
+		 $scope.contents.push(expr(this));
+		 
+		 //Clear text box
+		 angular.forEach($scope.headers,function(header){
+				$scope.$eval('model.'+header.variablename+'=""'); 
+		});
+	 };
+	 
+	 $scope.deleteRow= function(index){
+			 $scope.contents.splice(index,1);
+		 };
 });
-});
-
