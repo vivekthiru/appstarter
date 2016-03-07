@@ -14,8 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
-import com.test.helper.EmployeeHelper;
-import com.test.model.Student;
+
 
 @Controller
 @EnableWebMvc
@@ -23,7 +22,7 @@ public class CommonController{
    
 
    
-   @RequestMapping(value="/footer",method = RequestMethod.GET)
+/*   @RequestMapping(value="/footer",method = RequestMethod.GET)
    public ModelAndView footer() {
        System.out.println("==== in footer ====");
        return new ModelAndView("footer.jsp", "command", null); 
@@ -34,13 +33,17 @@ public class CommonController{
        System.out.println("==== in header ====");
        return new ModelAndView("header.jsp", "command", null); 
    }
-
+*/
    
    @RequestMapping(value="/link",method = RequestMethod.GET)
-   public ModelAndView doFramework(@RequestParam("url") String url) {
+   public ModelAndView doFramework(@RequestParam("url") String url) throws InterruptedException {
+	  // Thread.currentThread().sleep(10000);
        System.out.println("==== in framework ====" + url);
-       return new ModelAndView(url+".jsp", "command", null); 
-   }
+      /* if (url.equals("footer")){
+    	   return new ModelAndView("/jsp/"+url+".jsp", "command", null); 
+       }*/
+       return new ModelAndView("/html/"+url+".html", "command", null); 
+   }	
 
 
 

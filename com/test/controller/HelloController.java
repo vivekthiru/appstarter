@@ -2,6 +2,7 @@ package com.test.controller;
 
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -13,8 +14,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
-import com.test.helper.EmployeeHelper;
-import com.test.model.Student;
+import com.test.helper.StockHelper;
+import com.test.model.Stock;
 
 @Controller
 @EnableWebMvc
@@ -22,24 +23,25 @@ public class HelloController{
    
    @CrossOrigin(origins = "http://localhost:8080")
    @RequestMapping(value="/starter",headers="Accept=*/*", method=RequestMethod.GET,produces="application/json")
-   public @ResponseBody List starter() {
+   public @ResponseBody Map starter() throws InterruptedException {
        System.out.println("==== in starter ====");
-       EmployeeHelper eh = new EmployeeHelper();
-       return eh.populateEmployees();
+       StockHelper eh = new StockHelper();
+      // Thread.currentThread().sleep(10000);
+       return eh.populateStock();
    }
    
    
    @RequestMapping(value="/",method = RequestMethod.GET)
    public ModelAndView begin() {
        System.out.println("==== in begin ====");
-       return new ModelAndView("framework.jsp", "command", null); 
+       return new ModelAndView("/html/framework.html", "command", null); 
    }
    
  
    
    
    
-   @RequestMapping(value="/student", method = RequestMethod.GET)
+/*   @RequestMapping(value="/student", method = RequestMethod.GET)
    public ModelAndView student() {
 	   		Student st = new Student();
 	   		st.setAge(22);
@@ -54,5 +56,5 @@ public class HelloController{
 	      model.addAttribute("id", student.getId());
 	      
 	      return "result";
-   }
+   }*/
 }
