@@ -1,0 +1,36 @@
+
+<div  ng-controller="StockController" >
+
+	<section>
+	<div class="row">
+  <div class="col-lg-6">
+      <input type="text" class="form-control" placeholder="Search for Stock Code..." ng-model="search.stockName">
+    </div>
+    </div>
+	</section>
+	<section>
+		<table class="table-striped">
+		<tr >
+		 <th class="col-xs-2"></th>
+			<th ng-repeat="header in headers">{{header.displayname}}</th>
+		</tr>
+		<tr >
+		<td  ><img style="width:20px;height:20px" ng-src="static/images/add.png" ng-click="addRow()"/></td>
+			<td ng-repeat="header in headers">
+			
+			<input class="col-xs-2" style="width:110px;height:30px" type="text" class="form-control" ng-model="model[header.variablename]"  >
+
+			</td>
+		</tr>
+		
+		<tr class="animate" ng-repeat="content in contents  | filter : search" >
+		<!-- <tr>-->
+		<td><img style="width:20px;height:20px" ng-src="static/images/sub.png" ng-click="deleteRow($index)"/></td>
+		<td ng-repeat="header in headers" >
+				{{content[header.variablename]}}
+		</td>
+		</tr>
+		</table>
+	</section>
+
+</div>

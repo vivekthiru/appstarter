@@ -1,0 +1,23 @@
+<!doctype html>
+<html ng-app="FrameworkModule">
+  <head>
+    <script src="static/js/angular.js"></script>
+    <script src="static/js/angular-animate.js"></script>
+    <script src="static/js/frameworkctrl.js"></script>
+
+     <link rel="stylesheet" href="static/css/default.css">
+     <link rel="stylesheet" href="static/css/footer.css">
+     <link rel="stylesheet" href="static/css/bootstrap.css">
+     <link rel="stylesheet" href="static/css/bootstrap-theme.css">
+  </head>
+
+	<body ng-controller="FrameworkController">
+	<div id="wrapper">
+		<div  id="headerdiv"><ng-include src="headerpage"  ></ng-include></div>
+		<div  id="maindiv"><ng-include src="mainpage"></ng-include></div>
+		<div  id="footerdiv"><ng-include src="footerpage" ></ng-include></div>
+	</div>
+		
+	<!-- <div id="processing" style="{{spinnerstyle}}"><img src="static/images/spinner.gif" /></div>-->
+  </body>
+</html>
